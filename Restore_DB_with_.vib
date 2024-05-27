@@ -1,0 +1,28 @@
+Para que o ponto de restauração do Veeam Backup & Replication encontre e utilize um arquivo .vib que você restaurou da fita, é essencial seguir algumas etapas para garantir que o arquivo esteja corretamente integrado ao repositório de backup e reconhecido pela configuração do Veeam Backup & Replication. Aqui está um procedimento geral que você pode seguir:
+
+1. Mova o Arquivo .vib para o Repositório de Backup Apropriado
+Certifique-se de que o arquivo .vib esteja localizado em um repositório de backups ou numa pasta que faça parte de um repositório configurado no Veeam Backup & Replication. Os repositórios de backup são os locais onde o Veeam espera encontrar os arquivos de backup para operações de restauração.
+
+2. Rescan o Repositório de Backup
+Para que o Veeam reconheça o arquivo .vib restaurado da fita, você precisa fazer um 'Rescan' do repositório onde colocou o arquivo. Siga estes passos:
+
+Abra o console Veeam Backup & Replication.
+Navegue até a seção "Backup Infrastructure" (Infraestrutura de Backup) no painel inferior esquerdo.
+Localize e clique com o botão direito do mouse no repositório de backup onde o arquivo .vib foi colocado.
+Selecione "Rescan" (Reescanear).
+O Veeam vai escanear o repositório de backup em busca de novos arquivos e atualizações, incluindo o arquivo .vib que você restaurou da fita.
+
+3. Verificação do Ponto de Restauração
+Após o rescan, você pode verificar se o ponto de restauração reconheceu o arquivo .vib:
+
+Vá para a seção "Backup & Replication" no painel do console Veeam.
+Navegue até a área de "Backups".
+Localize o job de backup relacionado ao arquivo .vib restaurado e verifique se o ponto de restauração está disponível.
+4. Realize a Restauração Necessária
+Com o arquivo .vib agora visível como um ponto de restauração, você pode proceder com a restauração desejada, seja ela de arquivos individuais, VMs inteiras, ou específicos itens de aplicação.
+
+Notas Importantes
+Certifique-se de que o nome e a estrutura da pasta do arquivo .vib estejam corretos e condizentes com aqueles do repositório de backup original.
+O processo pode variar dependendo da sua versão específica do Veeam Backup & Replication e da configuração do seu ambiente.
+Se o arquivo .vib fizer parte de uma cadeia de backup e você precisar de outros arquivos da cadeia (.vbks e possíveis outros .vibs) para poder restaurar com sucesso, assegure-se de que todos os arquivos necessários estejam presentes e acessíveis no repositório.
+Lembre-se, para casos específicos ou configurações complexas, a consulta à documentação oficial da Veeam, recursos da comunidade da Veeam, ou o suporte da Veeam pode fornecer orientações adicionais adaptadas à sua situação.
